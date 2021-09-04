@@ -29,7 +29,7 @@ class GeoServiceImplTest {
     @MethodSource("testIp")
     void byIpTest(String ip, Country country) {
 
-        GeoService geoService = Mockito.spy(GeoServiceImpl.class);
+        GeoService geoService = new GeoServiceImpl();
 
         assertThat(geoService.byIp(ip).getCountry(), is(country));
     }

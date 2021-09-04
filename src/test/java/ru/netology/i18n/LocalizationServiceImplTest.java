@@ -27,7 +27,7 @@ class LocalizationServiceImplTest {
     @ParameterizedTest
     @MethodSource("testLocale")
     void locale(Country country, String expected) {
-        LocalizationService localizationService = Mockito.spy(LocalizationServiceImpl.class);
+        LocalizationService localizationService = new LocalizationServiceImpl();
 
         assertThat(localizationService.locale(country), is(expected));
     }
